@@ -29,10 +29,6 @@ export default function App() {
 
 }
 
-
-
-import React from "react"
-
 export default function App() {
     /**
      * Challenge: Replace the if/else below with a ternary
@@ -50,7 +46,6 @@ export default function App() {
     )
 }
 
-import React from "react"
 
 export default function App() {
     /**
@@ -77,9 +72,6 @@ export default function App() {
     )
 }
 
-
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 function App() {
     /**
@@ -135,9 +127,6 @@ function App() {
     )
 }
 
-
-
-import React from "react"
 
 export default function App() {
     const [contact, setContact] = React.useState({
