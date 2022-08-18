@@ -10,14 +10,40 @@ import Box from "./Box";
 export default function App() {
 
 
-  const [squares, setSquares] = React.useState(boxesArray)
+   const [squares, setSquares] = React.useState(boxesArray)
 
-  const squareElements = squares.map(eachSquare => (
+    //creating a new state array and pushing each box object into new array, instead
+    // of directly manipulating the original state array.
+   function toggle(id) {
+          setSquares(prevSquares => {
+              const newSquares = []
+              for (let i = 0; i < prevSquares.length; i++) {
+                  const currentSquare = prevSquares[i]
+                  if(currentSquare.id === id) {
+                      const updatedSquare = {
+                          ...currentSquare,
+                          on: !currentSquare.on
+                      }
+                    newSquares.push(updatedSquare)
+                  } else {
+                    newSquares.push(currentSquare)
+                  }
+              }
+              return newSquares
+          })
+    }
+   const squareElements = squares.map(eachSquare => (
 
-    <div className="box" key={eachSquare.id}></div>
-
+        <Box  
+            key={eachSquare.id} 
+            id={eachSquare.id}
+            on={eachSquare.on}
+            toggle={toggle}   />
     ))
 
+
+
+ 
   return (
         <main>
           {squareElements}

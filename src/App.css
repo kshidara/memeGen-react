@@ -19,14 +19,11 @@ header {
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
     color: white;
     padding: 20px;
-
 }
 
 .header--img{
     height: 100%;
     margin-right: 6px;
-
-
 }
 
 .header--title {
@@ -34,13 +31,11 @@ header {
     margin-right: 6px;
     font-size: 1.25rem;
     margin-right: auto;
-
 }
 
 .header--description {
     font-size: .75rem;
     font-weight: 500;
-
 }
 
 .form {
@@ -50,8 +45,6 @@ header {
     width: 70%;
     margin-right: auto;
     margin-left: auto;
-
-
 }
 
 .form--input {
@@ -69,7 +62,6 @@ header {
     color: white;
     border: none;
     cursor: pointer;
-
 }
 
 .meme--img {
