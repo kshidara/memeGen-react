@@ -13,7 +13,8 @@ export default function Box(props) {
     return (
             <div 
                 style={styles} 
-                className="box" 
+                className="box"
+                //every time box gets. clicked, this function is run toggle() with box id passed in 
                 onClick={() => props.toggle(props.id)}
             >         
             </div>
