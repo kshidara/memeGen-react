@@ -3,14 +3,13 @@ import memesData from "./memesData";
 
 
 export default function Meme() {
-    /**
-     * 
-     * Next, create a new state variable called `allMemeImages`
-     * which will default to `memesData`, which we imported above
-     * 
-     * Lastly, update the `getMemeImage` function and the markup 
-     * to reflect our newly reformed state object and array in the
-     * correct way.
+    
+     /**
+     * Challenge: 
+     * 1. Set up the text inputs to save to
+     *    the `topText` and `bottomText` state variables.
+     * 2. Replace the hard-coded text on the image with
+     *    the text being saved to state.
      */
 
      const [meme, setMeme] = React.useState({
@@ -18,6 +17,21 @@ export default function Meme() {
         bottomText : "",
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
+
+
+    function handleInputChange(event) {
+
+        const {name, value} = event.target
+
+        setMeme(prevMemeInput => ({
+            
+                ...prevMemeInput,
+                [name] : value
+            
+        }))
+  
+
+    }
 
      const [allMemeImages, setAllMemeImages] = React.useState(memesData)
 
@@ -40,19 +54,29 @@ export default function Meme() {
             <div className="form">
                 <input type="text" 
                         placeholder="Top text"
-                        className="form--input">
-                </input>
+                        className="form--input"
+                        onChange={handleInputChange}
+                        name="topText"
+                        value={meme.topText}
+                />
                 <input  type="text"
                         placeholder="Bottom text"
-                        className="form--input">
-                </input>
+                        className="form--input"
+                        onChange={handleInputChange}
+                        name="bottomText"
+                        value={meme.bottomText}
+                />
                 <button 
                         onClick={getMemeImage}
                         className="form--button"
                 >Get a new meme image 
                 </button>   
             </div>
-            <img src={meme.randomImage} className="meme--img"></img>
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--img" />
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>        
         </main>
 
         )
