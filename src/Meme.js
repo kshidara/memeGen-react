@@ -46,8 +46,6 @@ export default function Meme() {
 
     }
 
- 
-   
     return(
 
         <main>
